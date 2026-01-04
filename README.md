@@ -61,16 +61,19 @@ This repo contains a **pure frontend prototype** of the JalGuard public view:
    ```bash
    git clone https://github.com/<your-username>/jalguard-public-view.git
    cd jalguard-public-view
+   ```
 Open the app:
 
 Just double‑click index.html, or
 
 Serve with a simple dev server:
 
-bash
-# Python
-python -m http.server 5173
-# then open http://localhost:5173 in browser
+  ```bash
+#Python
+  python -m http.server 5173
+#then open http://localhost:5173 in browser
+
+```
 Explore:
 
 🏠 Home: Scroll through sample hotspots
@@ -84,28 +87,33 @@ Explore:
 ---
 
 🧩 Project Structure
-bash
+```bash
 .
 ├── index.html      # Main UI – public view
 ├── style.css       # All styling (theme, cards, layout)
 └── script.js       # Tab switching, upvotes, in-memory issue posting
 index.html – Shell layout (header, tabs, sections for Home/Solved/Post/Profile).
 
-style.css –
+```
 
+style.css –
+```
 CSS variables for theme
 
 Card layout for issues and right‑side panels
 
 Responsive tweaks for mobile
+````
+
 
 script.js –
-
+```
 Handles tab switching
 
 Fake upvotes (front‑end only)
 
 Creates a new issue card on form submit
+```
 
 ---
 
@@ -113,18 +121,20 @@ Creates a new issue card on form submit
 This public view is designed to plug into a larger ecosystem:
 
 Citizen side:
-
+```
 Crowd‑source waterlogging reports with photos and approximate depth
 
 Let people upvote hotspots that block their daily routes
+```
 
 Government side (future work):
-
+```
 Region/date/upvote wise filters over the same dataset
 
 Action logging (who resolved, how long it took)
 
-Use rainfall history + drainage data + citizen “kharabness” to assign a rainfall score used in planning dashboards 
+Use rainfall history + drainage data + citizen “kharabness” to assign a rainfall score used in planning dashboards
+```
 
 ---
 
