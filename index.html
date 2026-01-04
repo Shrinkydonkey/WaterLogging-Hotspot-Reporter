@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JalGuard – Waterlogging Watch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/feather-icons/dist/feather.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-logo">
+          <span>J</span>
+        </div>
+        <div>
+          <div class="brand-text-title">
+            <span>JalGuard</span>
+          </div>
+          <div class="brand-sub">Waterlogging hotspot reporter</div>
+        </div>
+      </div>
+      <div class="brand-right">
+        <div class="chip">
+          <div class="chip-dot"></div>
+          LIVE MONSOON MAP
+        </div>
+        <div class="pill-outline">
+          <div class="pill-outline-icon">U</div>
+          <span>Login </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Body -->
+    <main class="app-body">
+      <!-- Left column -->
+      <section class="left-column">
+        <!-- Tabs -->
+        <div class="tabs">
+          <button class="tab active" data-tab="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M3 11L12 3l9 8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M5 10.8V21h14V10.8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Home
+          </button>
+          <button class="tab" data-tab="solved">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M5 13l4 4L19 7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Solved issues
+          </button>
+          <button class="tab" data-tab="post">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 5v14M5 12h14" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Post new issue
+          </button>
+          <button class="tab" data-tab="profile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 12a4 4 0 100-8 4 4 0 000 8z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M5 21a7 7 0 0114 0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Profile
+          </button>
+        </div>
+
+        <div class="feed-meta">
+          <div class="feed-title">
+            <span>WATERLOGGED HOTSPOTS</span>
+            <div style="font-size: 12px; color: var(--muted);">
+              Real-time public reports powering **urban** planning.
+            </div>
+          </div>
+          <div class="feed-filter">
+            Sort by
+            <select id="sortSelect">
+              <option value="severity">Severity score</option>
+              <option value="upvotes">Upvotes</option>
+              <option value="latest">Latest first</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Issues: Home -->
+        <div id="homeTab" class="issues-list">
+          <!-- Sample card 1 -->
+          <article class="issue-card" data-status="open" data-severity="92" data-upvotes="39" data-time="3">
+            <div class="issue-media">
+              <img src="https://images.pexels.com/photos/1201589/pexels-photo-1201589.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Waterlogged street" />
+              <div class="issue-media-badge">
+                <span style="font-size: 9px;">Rainfall score</span>
+                <strong>92 / 100</strong>
+              </div>
+            </div>
+            <div class="issue-body">
+              <div class="issue-header">
+                <div>
+                  <div class="issue-title">
+                    Sector 62 underpass fully flooded
+                    <span class="issue-tag">Community hotspot</span>
+                  </div>
+                  <div class="issue-location">
+                    <div class="issue-location-icon">📍</div>
+                    <span>Noida • 2.1 km • Logged 8 min ago</span>
+                  </div>
+                </div>
+                <div class="status-chip status-open">
+                  <span class="status-dot open"></span>
+                  OPEN
+                </div>
+              </div>
+              <div class="issue-meta-row">
+                <div class="issue-meta">
+                  <div class="meta-pill">
+                    <span style="font-size: 10px;">Drainage score</span>
+                    <strong>Low</strong>
+                  </div>
+                  <div class="severity-pill">
+                    <span class="severity-dot"></span>
+                    Severity 9.2 / 10
+                  </div>
+                </div>
+                <div class="badge-score">
+                  🌧 110 mm in 24h
+                </div>
+              </div>
+              <div class="issue-footer">
+                <button class="upvote-btn">
+                  ⬆ Upvote
+                  <span class="count">39</span>
+                </button>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="time-pill">
+                    ⏱ Est. response • 22 min
+                  </div>
+                  <div class="time-pill">
+                    🏛 Govt seen • Yes
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sample card 2 -->
+          <article class="issue-card" data-status="open" data-severity="78" data-upvotes="21" data-time="12">
+            <div class="issue-media">
+              <img src="https://images.pexels.com/photos/2957860/pexels-photo-2957860.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Water puddles on street" />
+              <div class="issue-media-badge">
+                <span style="font-size: 9px;">Rainfall score</span>
+                <strong>78 / 100</strong>
+              </div>
+            </div>
+            <div class="issue-body">
+              <div class="issue-header">
+                <div>
+                  <div class="issue-title">
+                    Standing water near school gate
+                    <span class="issue-tag">Daily commute</span>
+                  </div>
+                  <div class="issue-location">
+                    <div class="issue-location-icon">📍</div>
+                    <span>Dadri Road • 800 m • Logged 38 min ago</span>
+                  </div>
+                </div>
+                <div class="status-chip status-open">
+                  <span class="status-dot open"></span>
+                  OPEN
+                </div>
+              </div>
+              <div class="issue-meta-row">
+                <div class="issue-meta">
+                  <div class="meta-pill">
+                    🔁 Recurring issue
+                  </div>
+                  <div class="severity-pill">
+                    <span class="severity-dot"></span>
+                    Severity 7.8 / 10
+                  </div>
+                </div>
+                <div class="badge-score">
+                  🌧 62 mm in 24h
+                </div>
+              </div>
+              <div class="issue-footer">
+                <button class="upvote-btn">
+                  ⬆ Upvote
+                  <span class="count">21</span>
+                </button>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="time-pill">
+                    ⏱ Est. response • 45 min
+                  </div>
+                  <div class="time-pill">
+                    🏛 Govt seen • Awaiting
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sample card 3 -->
+          <article class="issue-card" data-status="open" data-severity="64" data-upvotes="9" data-time="45">
+            <div class="issue-media">
+              <img src="https://images.pexels.com/photos/2058130/pexels-photo-2058130.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Water near houses" />
+              <div class="issue-media-badge">
+                <span style="font-size: 9px;">Rainfall score</span>
+                <strong>64 / 100</strong>
+              </div>
+            </div>
+            <div class="issue-body">
+              <div class="issue-header">
+                <div>
+                  <div class="issue-title">
+                    Lane 4: water near doorsteps
+                    <span class="issue-tag">Residential</span>
+                  </div>
+                  <div class="issue-location">
+                    <div class="issue-location-icon">📍</div>
+                    <span>Colony market • 3.2 km • Logged 1 hr ago</span>
+                  </div>
+                </div>
+                <div class="status-chip status-open">
+                  <span class="status-dot open"></span>
+                  OPEN
+                </div>
+              </div>
+              <div class="issue-meta-row">
+                <div class="issue-meta">
+                  <div class="meta-pill">
+                    🦟 Mosquito risk: High
+                  </div>
+                  <div class="severity-pill">
+                    <span class="severity-dot"></span>
+                    Severity 6.4 / 10
+                  </div>
+                </div>
+                <div class="badge-score">
+                  🌧 40 mm in 24h
+                </div>
+              </div>
+              <div class="issue-footer">
+                <button class="upvote-btn">
+                  ⬆ Upvote
+                  <span class="count">9</span>
+                </button>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="time-pill">
+                    ⏱ Est. response • 1 hr 20 min
+                  </div>
+                  <div class="time-pill">
+                    🏛 Govt seen • No
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Solved Tab -->
+        <div id="solvedTab" class="issues-list" style="display:none;">
+          <article class="issue-card" data-status="solved" data-severity="83" data-upvotes="31" data-time="120">
+            <div class="issue-media">
+              <img src="https://images.pexels.com/photos/2531409/pexels-photo-2531409.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cleaned street after waterlogging" />
+              <div class="issue-media-badge">
+                <span style="font-size: 9px;">Resolved in</span>
+                <strong>2 hr 15 min</strong>
+              </div>
+            </div>
+            <div class="issue-body">
+              <div class="issue-header">
+                <div>
+                  <div class="issue-title">
+                    City chowk underpass cleared
+                    <span class="issue-tag">Before → After</span>
+                  </div>
+                  <div class="issue-location">
+                    <div class="issue-location-icon">📍</div>
+                    <span>City chowk • Actioned yesterday</span>
+                  </div>
+                </div>
+                <div class="status-chip status-solved">
+                  <span class="status-dot solved"></span>
+                  SOLVED
+                </div>
+              </div>
+              <div class="issue-meta-row">
+                <div class="issue-meta">
+                  <div class="meta-pill">
+                    🏛 Authority: Nagar Nigam
+                  </div>
+                  <div class="meta-pill">
+                    🔁 Drainage desilted
+                  </div>
+                </div>
+                <div class="badge-score">
+                  📊 Logged in planning dashboard
+                </div>
+              </div>
+              <div class="issue-footer">
+                <button class="upvote-btn">
+                  ⬆ Support
+                  <span class="count">31</span>
+                </button>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div class="time-pill">
+                    ✅ Resolved • 10:42 PM
+                  </div>
+                  <div class="time-pill">
+                    📷 Post-solved image by officer
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Post Tab -->
+        <div id="postTab" style="display:none; margin-top: 6px;">
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                NEW ISSUE
+                <span>Log waterlogging in your lane</span>
+              </div>
+              <span class="panel-tag">Login</span>
+            </div>
+            <form id="issueForm">
+              <div class="form-group">
+                <label class="form-label">Title</label>
+                <input class="form-input" type="text" id="titleInput" placeholder="Example: Main market road submerged" required />
+                <div class="form-hint">Short and clear headline for your **hotspot**.</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Location</label>
+                <div class="form-row-inline">
+                  <input class="form-input" type="text" id="locationInput" placeholder="Street / landmark" required />
+                  <button type="button" class="btn-ghost" onclick="fakeLocate()">
+                    📍 Auto-locate
+                  </button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Describe situation</label>
+                <textarea class="form-textarea" id="descInput" placeholder="Depth of water, traffic impact, nearby houses, school, hospital etc." required></textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Severity estimate</label>
+                <div class="form-row-inline">
+                  <select class="form-select" id="severityInput">
+                    <option value="High">High (dangerous)</option>
+                    <option value="Medium">Medium (hard to cross)</option>
+                    <option value="Low">Low (puddles)</option>
+                  </select>
+                  <input class="form-input" id="depthInput" type="number" min="0" max="200" placeholder="Depth in cm" />
+                </div>
+                <div class="form-hint">This will help app generate an initial rainfall score for planners.</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Photo (optional)</label>
+                <input class="form-input" type="file" accept="image/*" />
+                <div class="form-hint">Attach a clear image of the waterlogged spot.</div>
+              </div>
+              <button class="btn-primary" type="submit">
+                <span class="icon">＋</span>
+                Post issue to public map
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Profile Tab -->
+        <div id="profileTab" style="display:none; margin-top: 6px;">
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                Piyush Samal
+                <span>Badarpur Border, New Delhi</span>
+              </div>
+              <span class="panel-tag">Citizen-first</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+              <div class="pill-outline-icon">U</div>
+              <div style="font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:6px;">
+                <div>
+                  Details regarding the person providing the data (details will be thought out later)
+                </div>
+                <div class="micro-pill-row">
+                  <div class="micro-pill">Total issues logged: 7</div>
+                  <div class="micro-pill">Avg. response: 54 min</div>
+                  <div class="micro-pill">Top hotspot: Sector 62 underpass</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right column -->
+      <aside class="right-column">
+        <!-- Live risk panel -->
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              LIVE RISK
+              <span>Today’s citywide snapshot</span>
+            </div>
+            <span class="panel-tag">Data + crowd</span>
+          </div>
+          <div class="risk-grid">
+            <div class="risk-card">
+              <div class="risk-label">Active hotspots</div>
+              <div class="risk-value">42</div>
+              <div class="risk-chip">From public reports</div>
+            </div>
+            <div class="risk-card">
+              <div class="risk-label">Monsoon load</div>
+              <div class="risk-value">Heavy</div>
+              <div class="risk-chip">Rain radar + past data</div>
+            </div>
+            <div class="risk-card">
+              <div class="risk-label">Average score</div>
+              <div class="risk-value">81 / 100</div>
+              <div class="risk-chip">City risk index</div>
+            </div>
+          </div>
+          <div style="margin-top:10px;font-size:11px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;">
+            <span>Rainfall stress on drainage network</span>
+            <span style="font-size:10px;">0 = Dry • 100 = Extreme</span>
+          </div>
+          <div class="rain-bar">
+            <div class="rain-bar-fill"></div>
+          </div>
+          <div class="micro-pill-row">
+            <div class="micro-pill">AI rainfall score per hotspot</div>
+            <div class="micro-pill">Govt dashboard for planning</div>
+            <div class="micro-pill">Action time-tracking for each issue</div>
+          </div>
+        </div>
+
+        <!-- “How it works” -->
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              HOW THIS HELPS
+              <span>Citizens + authorities together</span>
+            </div>
+          </div>
+          <ul style="list-style:none;font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:5px;">
+            <li>• Log your lane’s waterlogging with photo + location in under 30 seconds.</li>
+            <li>• Each hotspot gets a rainfall score built from past rain, drainage, and reported **kharabness**.</li>
+            <li>• Govt view uses the same feed sorted by region, date, and upvotes for precise urban planning.</li>
+            <li>• Actions taken and time to resolve are recorded so that next monsoon is less chaotic.</li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Floating action button -->
+      <button class="floating-post" id="floatingPostBtn">
+        <span class="icon">＋</span>
+        Post new waterlogging
+      </button>
+    </main>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+      <div class="toast-icon">
+        <span>✓</span>
+      </div>
+      <div>
+        <div class="toast-body-title">Issue posted to public feed</div>
+        <div class="toast-body-text">Govt dashboards will now factor this hotspot into monsoon planning.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tab switching
+    const tabs = document.querySelectorAll(".tab");
+    const homeTab = document.getElementById("homeTab");
+    const solvedTab = document.getElementById("solvedTab");
+    const postTab = document.getElementById("postTab");
+    const profileTab = document.getElementById("profileTab");
+    const floatingPostBtn = document.getElementById("floatingPostBtn");
+
+    function showTab(name) {
+      homeTab.style.display = name === "home" ? "flex" : "none";
+      solvedTab.style.display = name === "solved" ? "flex" : "none";
+      postTab.style.display = name === "post" ? "block" : "none";
+      profileTab.style.display = name === "profile" ? "block" : "none";
+
+      tabs.forEach(t => t.classList.toggle("active", t.dataset.tab === name));
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => showTab(tab.dataset.tab));
+    });
+
+    floatingPostBtn.addEventListener("click", () => {
+      showTab("post");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Upvote interactions (fake, front-end only)
+    document.addEventListener("click", e => {
+      if (e.target.closest(".upvote-btn")) {
+        const btn = e.target.closest(".upvote-btn");
+        const countSpan = btn.querySelector(".count");
+        const curr = parseInt(countSpan.textContent || "0", 10);
+        countSpan.textContent = curr + 1;
+        btn.style.boxShadow = "0 12px 32px rgba(56, 189, 248, 0.85)";
+      }
+    });
+
+    // Fake auto-locate
+    function fakeLocate() {
+      const input = document.getElementById("locationInput");
+      if (!input.value) {
+        input.value = "Near your current GPS pin";
+      }
+    }
+
+    // Toast helper
+    const toast = document.getElementById("toast");
+    function showToast() {
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 2300);
+    }
+
+    // New issue form – prepend a card to Home list (front-end only)
+    const issueForm = document.getElementById("issueForm");
+    issueForm.addEventListener("submit", e => {
+      e.preventDefault();
+      const title = document.getElementById("titleInput").value.trim();
+      const location = document.getElementById("locationInput").value.trim();
+      const severityText = document.getElementById("severityInput").value;
+      const depth = document.getElementById("depthInput").value || "Unknown";
+
+      if (!title || !location) return;
+
+      const severityScore = severityText === "High" ? 9 : severityText === "Medium" ? 7 : 5;
+      const rainfallScore = Math.min(100, severityScore * 10);
+
+      const card = document.createElement("article");
+      card.className = "issue-card";
+      card.dataset.status = "open";
+      card.dataset.severity = severityScore * 10;
+      card.dataset.upvotes = 0;
+      card.dataset.time = 0;
+
+      card.innerHTML = `
+        <div class="issue-media">
+          <img src="https://images.pexels.com/photos/1902948/pexels-photo-1902948.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Newly reported waterlogging" />
+          <div class="issue-media-badge">
+            <span style="font-size: 9px;">Rainfall score</span>
+            <strong>${rainfallScore} / 100</strong>
+          </div>
+        </div>
+        <div class="issue-body">
+          <div class="issue-header">
+            <div>
+              <div class="issue-title">
+                ${title}
+                <span class="issue-tag">New report</span>
+              </div>
+              <div class="issue-location">
+                <div class="issue-location-icon">📍</div>
+                <span>${location} • Just now</span>
+              </div>
+            </div>
+            <div class="status-chip status-open">
+              <span class="status-dot open"></span>
+              OPEN
+            </div>
+          </div>
+          <div class="issue-meta-row">
+            <div class="issue-meta">
+              <div class="meta-pill">
+                🌀 Depth: ${depth} cm
+              </div>
+              <div class="severity-pill">
+                <span class="severity-dot"></span>
+                Severity ${severityScore} / 10
+              </div>
+            </div>
+            <div class="badge-score">
+              🌧 Auto-estimated from your input
+            </div>
+          </div>
+          <div class="issue-footer">
+            <button class="upvote-btn">
+              ⬆ Upvote
+              <span class="count">0</span>
+            </button>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <div class="time-pill">
+                ⏱ Est. response • TBA
+              </div>
+              <div class="time-pill">
+                🏛 Govt seen • Pending
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      homeTab.prepend(card);
+      showTab("home");
+      showToast();
+      issueForm.reset();
+    });
+  </script>
+</body>
+</html>
